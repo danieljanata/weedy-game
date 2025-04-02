@@ -1,0 +1,141 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: Arial, sans-serif;
+  /* Vycentrování "gameWrapperu" doprostřed okna */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Rámeček 400×500 s kulatými rohy a stínem */
+.gameWrapper {
+  width: 400px;
+  height: 500px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Canvas vyplní celý obdélník */
+#gameCanvas {
+  width: 400px;
+  height: 500px;
+  display: block;
+}
+
+/* ---------- STAMINA BAR ---------- */
+/* Posunutý od okraje (20px od vrchu a zprava), zúžený na 10px, s tenkým černým obrysem */
+#staminaBar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 10px;
+  height: 100px;
+  background: #2B2B2B;
+  border: 2px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Výplň stamina baru */
+#staminaFill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: yellow;
+  border-radius: 10px;
+}
+
+/* ---------- GAME OVER OVERLAY ---------- */
+#gameOverOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 500px;
+  display: none;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#darken {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 500px;
+  background: rgba(0,0,0,0.5);
+}
+
+#gameOverImage {
+  position: absolute;
+  width: 221px;
+  height: 221px;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#thanksText {
+  position: absolute;
+  top: 280px;  /* Posunuto nahoru */
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  font-style: italic;
+}
+
+#scoreText {
+  position: absolute;
+  top: 310px;  /* Posunuto nahoru */
+  width: 100%;
+  text-align: center;
+  color: yellow;
+  font-size: 28px;  /* Zvýšená velikost */
+  font-weight: bold;
+}
+
+#startButton {
+  position: absolute;
+  width: 177px;
+  height: 80px;
+  top: 390px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .gameWrapper {
+    width: 95vw;
+    height: calc(95vw * 1.25);
+  }
+  #gameCanvas,
+  #gameOverOverlay,
+  #darken {
+    width: 100%;
+    height: 100%;
+  }
+  #gameOverImage {
+    top: 12%;
+  }
+  #thanksText {
+    top: 58%;
+  }
+  #scoreText {
+    top: 65%;
+  }
+  #startButton {
+    top: 75%;
+  }
+}
+}

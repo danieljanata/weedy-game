@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weedy Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Rámeček 400×500 -->
+  <div class="gameWrapper">
+    <canvas id="gameCanvas" width="400" height="500"></canvas>
+
+    <!-- Nový stamina bar umístěný v pravém horním rohu -->
+    <div id="staminaBar">
+      <div id="staminaFill"></div>
+    </div>
+
+    <!-- Game Over overlay (zobrazí se až po konci hry) -->
+    <div id="gameOverOverlay">
+      <div id="darken"></div>
+      <img id="gameOverImage" src="images/game_over.png" alt="Game Over" />
+      <div id="thanksText">Díky za všechno! Byla to jízda :)</div>
+      <div id="scoreText"></div>
+      <img id="startButton" src="images/start.png" alt="Start" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
